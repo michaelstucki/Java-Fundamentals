@@ -7,13 +7,13 @@ Fundamentals Exercise 1: CLI
          a. create 3 new .txt files all with different names
          b. print the directory path
          c. list the contents of the folder
-     5. Inside of folder Terminal_testing, create a new folder
-     6. Copy a file from Terminal_testing to the new folder
-     7. Move a different file from Terminal_testing to the new folder
-     8. Demonstrate removing:
+     4. Inside of folder Terminal_testing, create a new folder
+     5. Copy a file from Terminal_testing to the new folder
+     6. Move a different file from Terminal_testing to the new folder
+     7. Demonstrate removing:
          a. A file
          b. A folder
-     9. CHALLENGE:
+     8. CHALLENGE:
          a. Use $ vim to write some text inside a file
          b. Use $ cat print contents of file
          c. Use $ grep to search for a word inside file
@@ -22,4 +22,59 @@ Example Output:
     1. cd ~/Documents/CodingNomads/
     2. mkdir Terminal_testing
     3. //...
+
+My Work:
+
+Commands:
+
+1. cd Documents; cd CodingNomads
+2. mkdir Testing_testing
+3. cd Testing_testing; touch a b c; pwd; ls -l
+ 4. mkdir my_folder
+ 5. cp a my_folder
+ 6. mv b my_folder
+ 7. a. rm a
+    b. rm -rf my_folder
+ 8. a. vim a -> i (insert) hello vim! esc wq
+    b. cat a
+    c. grep -i "hello" a
+
+ Results:
+
+ michaelstucki@Michaels-Mac-mini CodingNomads % mkdir Testing_testing
+ michaelstucki@Michaels-Mac-mini CodingNomads % cd Testing_testing; touch a b c; pwd; ls -l
+ /Users/michaelstucki/Documents/CodingNomads/Testing_testing
+ total 0
+ -rw-r--r--  1 michaelstucki  staff  0 Jun  6 09:51 a
+ -rw-r--r--  1 michaelstucki  staff  0 Jun  6 09:51 b
+ -rw-r--r--  1 michaelstucki  staff  0 Jun  6 09:51 c
+ michaelstucki@Michaels-Mac-mini Testing_testing % mkdir my_folder
+ michaelstucki@Michaels-Mac-mini Testing_testing % cp a my_folder
+ michaelstucki@Michaels-Mac-mini Testing_testing % mv b my_folder
+ michaelstucki@Michaels-Mac-mini Testing_testing % tree
+ .
+ ├── a
+ ├── c
+ └── my_folder
+     ├── a
+     └── b
+
+ 2 directories, 4 files
+ michaelstucki@Michaels-Mac-mini Testing_testing % rm -rf my_folder
+ michaelstucki@Michaels-Mac-mini Testing_testing % ls -l
+ total 0
+ -rw-r--r--  1 michaelstucki  staff  0 Jun  6 09:51 a
+ -rw-r--r--  1 michaelstucki  staff  0 Jun  6 09:51 c
+ michaelstucki@Michaels-Mac-mini Testing_testing % tree
+ .
+ ├── a
+ └── c
+
+ 1 directory, 2 files
+ michaelstucki@Michaels-Mac-mini Testing_testing % vim a
+ michaelstucki@Michaels-Mac-mini Testing_testing % cat a
+ hello vim!
+ michaelstucki@Michaels-Mac-mini Testing_testing % grep -i hello a
+ hello vim!
+
 
