@@ -52,7 +52,7 @@ Initializing git folder: DONE
        iv. git push (since default remote repo and branch were set in step 2.g.)
 
  Adding a remote: DONE
- 
+
  Cloning repository from Github: DONE
  1. (use this) https://github.com/michaelstucki/project-1---random-quote-generator.git
  2. cd CodingNomads; git clone https://github.com/michaelstucki/project-1---random-quote-generator.git
