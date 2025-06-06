@@ -10,11 +10,11 @@ Initializing git folder
         b. Make new file
         c. Add file
         d. Commit file
-        c. On Github, create new git_practice repository
-        d. Add this new GitHub repository as a new "remote" to your local Git repo. You can do this by using the command
+        e. On Github, create new git_practice repository
+        f. Add this new GitHub repository as a new "remote" to your local Git repo. You can do this by using the command
             git remote add <ANY_NAME> <URL_OF_NEW_GITHUB_REPO.git>
-        d. Push commit file to Github
-        e. Practice the following git flow until you feel comfortable:
+        g. Push commit file to Github
+        h. Practice the following git flow until you feel comfortable:
             i.   Create or modify file
             ii.  Add file(s)
             iii. Commit file(s)
@@ -32,3 +32,32 @@ Cloning repository from Github
     3. Create new repository on Github
     4. Add new remote on local machine
     5. Push to new Github repository
+
+My Work
+
+Commands:
+
+Initializing git folder: DONE
+ 1. cd CodingNomads; mkdir git_practice
+ 2. a. cd git_practice; git init
+    b. touch a
+    c. git add .
+    d. git commit "new file"
+    e. Github > Repositories > New > git_practice > Create Repository > copy repo URL
+    f. git remote add practice <URL>
+    g. git push -u practice main
+    h. i. use vim to add text to a
+       ii. git add a
+       iii. git commit -m "add text"
+       iv. git push (since default remote repo and branch were set in step 2.g.)
+
+ Adding a remote: DONE
+ 
+ Cloning repository from Github: DONE
+ 1. (use this) https://github.com/michaelstucki/project-1---random-quote-generator.git
+ 2. cd CodingNomads; git clone https://github.com/michaelstucki/project-1---random-quote-generator.git
+ 3. Github: create project-1_test
+ 4. git remote add test https://github.com/michaelstucki/project-1_test.git
+ 5. git push test master (above repo is old)
+
+
