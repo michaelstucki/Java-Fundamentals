@@ -24,8 +24,12 @@ public class Exercise_02 {
     public static void main(String[] args) {
 
         // write code here
-        double d = 10.5;
-        int i = (int) d; // narrowing, explicit cast; losing information by truncation fractional (decimal) part
-        System.out.println(i);
+        int i = 10;
+        double d = i; // widening, implicit cast; no information is lost
+        System.out.println(d);
+
+        double d2 = 10.5;
+        int i2 = (int) d2; // narrowing, explicit cast; losing information by truncation fractional (decimal) part
+        System.out.println(i2);
     }
 }
