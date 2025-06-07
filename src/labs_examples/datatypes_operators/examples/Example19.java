@@ -11,6 +11,7 @@ class PromDemo {
 
         b = 10;
         b = (byte) (b * b); // cast needed!!
+//        b = b * b;
 
         System.out.println("i and b: " + i + " " + b);
     }

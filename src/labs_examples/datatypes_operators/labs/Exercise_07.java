@@ -24,6 +24,9 @@ public class Exercise_07 {
         int days = scanner.nextInt();
 
         // write completed code here
-
+        final int SECONDS_IN_HOUR = 3600;
+        final int HOURS_IN_DAY = 24;
+        long seconds = (long) days * HOURS_IN_DAY * SECONDS_IN_HOUR;
+        System.out.println("seconds in " + days + " days: " + seconds);
     }
 }
