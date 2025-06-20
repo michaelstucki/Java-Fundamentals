@@ -6,6 +6,7 @@ Answer: Parent called
 2. c is assigned a reference to an object of type Child (the derived or subclass in this example).
 3. so, while it's true that the subclass's doSomething method overrides its inherited superclass counterpart method,
    the superclass Parent type reference variable only has access to the doSomething method defined its own class.
+In short, the base class reference only gives access to the methods defined in the base class.
 
 
 public class InheritanceTest
