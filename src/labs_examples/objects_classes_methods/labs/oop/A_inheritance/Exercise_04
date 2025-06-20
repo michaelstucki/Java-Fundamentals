@@ -1,6 +1,11 @@
 
 Without running the code below, please tell me what it will print.
 
+Answer: Parent called
+1. c is of reference type Parent (the base or super class in this example).
+2. c is assigned a reference to an object of type Child (the derived or subclass in this example).
+3. so, while it's true that the subclass's doSomething method overrides its inherited superclass counterpart method,
+   the superclass Parent type reference variable only has access to the doSomething method defined its own class.
 
 
 public class InheritanceTest
