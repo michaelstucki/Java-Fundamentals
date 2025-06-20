@@ -1,7 +1,14 @@
 
 Without running the code below, please tell me what will print. Why?
 
+Answer:
+Parent called
+Child called
 
+1. The superclass constructor (Parent()) is the first command run when the subclass constructor (Child()) is invoked.
+2. When Parent() is run it prints "Parent called".
+3. Then when Child() completes running it prints "Child called".
+4. So, the printed messages are as noted.
 
 
 public class InheritanceTest
