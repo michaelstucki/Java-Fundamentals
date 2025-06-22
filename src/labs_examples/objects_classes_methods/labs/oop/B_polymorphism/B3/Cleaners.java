@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Cleaners implements LaundryOps {
-    private ArrayList<String> clothes;
+    private final ArrayList<String> clothes;
+
+    public Cleaners(ArrayList<String> clothes) {
+        this.clothes = clothes;
+    }
 
     @Override
-    public void processClothes(ArrayList<String> clothes) {
-        this.clothes = clothes;
+    public void processClothes() {
         if (!clothes.isEmpty()) {
             sort();
             wash();
