@@ -12,13 +12,11 @@ public class Hands implements LaundryOps {
 
     @Override
     public void processClothes() {
-        if (!clothes.isEmpty()) {
-            sort();
-            wash();
-            dry();
-            fold();
-            returnClothes();
-        }
+        sort();
+        wash();
+        dry();
+        fold();
+        returnClothes();
     }
 
     public String listClothes() {
