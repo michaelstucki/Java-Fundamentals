@@ -10,13 +10,15 @@ public class BlackjackController {
         System.out.print("Enter your name: ");
         String userInput = scan.next();
         Player user = new Player(userInput);
-        Player ai = new Player("computer");
+        Player ai = new Player("Computer");
 
+        // Deal each player two (2) cards
         deck.deal(user);
         deck.deal(user);
         deck.deal(ai);
         deck.deal(ai);
 
+        // Game loop
         boolean gameOver = false;
         do {
             // User's play
@@ -61,6 +63,6 @@ public class BlackjackController {
         }
 
         System.out.println("-------------- GAME OVER! --------------");
-        System.out.println("Winner is " + winner + "!");
+        System.out.println(winner + " won!");
     }
 }

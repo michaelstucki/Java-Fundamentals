@@ -13,8 +13,8 @@ public class Deck {
         final String[] suits = new String[]{"♠", "♦", "♥", "♣"};
         cards = new Card[ranks.length * suits.length];
         int index = 0;
-        for (String rank : ranks) {
-            for (String suit : suits) {
+        for (String suit : suits) {
+            for (String rank : ranks) {
                 int value = 0;
                 switch (rank) {
                     case "A":
