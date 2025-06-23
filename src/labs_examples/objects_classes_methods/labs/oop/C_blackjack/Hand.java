@@ -22,9 +22,18 @@ public class Hand {
         handValue = value;
     }
 
-    public int getHandValue() { return handValue; }
+    public int getHandValue() {
+        setHandValue();
+        return handValue;
+    }
 
-    public boolean isGreaterThan21() {
+    public boolean isBusted() {
         return handValue > 21;
+    }
+
+    public String cardsToString() {
+        StringBuilder stb = new StringBuilder();
+        for(Card card : cards) stb.append(card.getRankSuit()).append(" ");
+        return stb.toString();
     }
 }

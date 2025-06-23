@@ -46,5 +46,6 @@ public class Deck {
         Card card = cards[index];
         player.getHand().addCard(card);
         unUsedCards.remove(index);
+
     }
 }
