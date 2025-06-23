@@ -6,7 +6,7 @@ import java.util.Random;
 public class Deck {
     private final Card[] cards;
     private final Random random;
-    private ArrayList<Integer> unUsedCards;
+    private final ArrayList<Integer> unUsedCards;
 
     public Deck() {
         final String[] ranks = new String[]{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};

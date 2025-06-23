@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class BlackjackController {
     public static void main(String[] args) {
         Deck deck = new Deck();
-        Card[] cards = deck.getCards();
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter your name: ");
         String userInput = scan.next();

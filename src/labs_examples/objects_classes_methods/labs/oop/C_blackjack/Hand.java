@@ -10,8 +10,6 @@ public class Hand {
         cards = new ArrayList<>();
     }
 
-    public ArrayList<Card> getCards() { return cards; }
-
     public void addCard(Card card) {
         cards.add(card);
     }
