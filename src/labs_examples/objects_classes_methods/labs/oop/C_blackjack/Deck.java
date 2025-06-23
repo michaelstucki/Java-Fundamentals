@@ -37,10 +37,6 @@ public class Deck {
         for(int i = 0; i < cards.length; i++) unUsedCards.add(i);
     }
 
-    public Card[] getCards() {
-        return cards;
-    }
-
     public void deal(Player player) {
         int index = random.nextInt(unUsedCards.size());
         Card card = cards[index];
