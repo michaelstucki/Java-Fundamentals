@@ -1,6 +1,6 @@
 Building off the previous classes we created in Exercise_01
 
-1) In the Deck.java class, create a method that will populate the Card[] with 52 unique Card object. The cards
+1) In the Deck.java class, create a method that will populate the Card[] with 52 unique Card objects. The cards
 should mimic an actual card deck. It should contain four aces (spades, hearts, diamonds, clubs), four 2's
 (spades, hearts, diamonds, clubs), four 3's (spades, hearts, diamonds, clubs), ... up through Jacks, Queens and Kings
 
@@ -16,7 +16,7 @@ An ace is worth one, a 2 is worth two, a 3 is worth three, ... a jack is worth 1
 a king is worth 10.
 
 4) In the Hand class, create a method that will return true if the hand value is greater than 21 and false if the hand
-value is less than 21
+value is less than (or equal to) 21
 
 5) In the Player class, create a method named computerAI that will return true if the computer player wants another card.
 It will return false is the computer player does not want another card. If the computer player's hand currently has a
