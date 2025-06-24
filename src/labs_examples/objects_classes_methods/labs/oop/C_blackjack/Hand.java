@@ -34,4 +34,8 @@ public class Hand {
         for(Card card : cards) stb.append(card.getRankSuit()).append(" ");
         return stb.toString();
     }
+
+    public void clearHand() {
+        cards.clear();
+    }
 }
