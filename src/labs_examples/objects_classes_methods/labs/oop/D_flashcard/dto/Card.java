@@ -6,11 +6,6 @@ public class Card {
     private String front;
     private String back;
 
-    public Card(String front, String back) {
-        setFront(front);
-        setBack(back);
-    }
-
     public int getId() { return cardId; }
 
     public String getFront() {

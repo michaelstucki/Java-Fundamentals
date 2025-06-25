@@ -1,8 +1,10 @@
 package labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui;
 
+import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dto.Card;
+
 public class FlashCardView {
 
-    private UserIO io = new IUserIOConsole();
+    private final UserIO io = new IUserIOConsole();
 
     public int printMenuAndGetSelection() {
         io.print("Main Menu");
@@ -13,4 +15,19 @@ public class FlashCardView {
 
         return io.readInt("Please enter a selection", 1, 4);
     }
-}
+
+    public Card getNewCard() {
+        Card card = new Card();
+        card.setFront(io.readString("Please enter the card's front (question or prompt)"));
+        card.setBack(io.readString("Please enter the card's back (answer or response"));
+        return card;
+    }
+
+    public void displayAddCardBanner() {
+        io.print("=== Add Card ===");
+    }
+
+    public void displayAddSuccessBanner() {
+        io.readString("Card successfully created. Please hit enter to continue");
+    }
+ }
