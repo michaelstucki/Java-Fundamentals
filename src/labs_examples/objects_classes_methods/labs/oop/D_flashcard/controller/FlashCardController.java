@@ -6,7 +6,6 @@ import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dto.Card;
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.FlashCardView;
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.IUserIOConsole;
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.UserIO;
-
 import java.util.List;
 
 public class FlashCardController {
@@ -28,9 +27,12 @@ public class FlashCardController {
                     addCard();
                     break;
                 case 3:
-                    io.print("REMOVE CARD");
+                    displayCard();
                     break;
                 case 4:
+                    removeCard();
+                    break;
+                case 5:
                     keepGoing = false;
                     break;
                 default:
@@ -45,6 +47,12 @@ public class FlashCardController {
         return view.printMenuAndGetSelection();
     }
 
+    private void listCards() {
+        view.displayAllCardsBanner();
+        List<Card> cards = dao.getAllCards();
+        view.displayAllCards(cards);
+    }
+
     private void addCard() {
         view.displayAddCardBanner();
         Card card = view.getNewCard();
@@ -52,9 +60,17 @@ public class FlashCardController {
         view.displayAddCardSuccessBanner();
     }
 
-    private void listCards() {
-        view.displayAllCardsBanner();
-        List<Card> cards = dao.getAllCards();
-        view.displayCards(cards);
+    private void displayCard() {
+        view.displayViewCardBanner();
+        int id = view.getCardIdChoice();
+        Card card = dao.viewCard(id);
+        view.displayCard(card);
+    }
+
+    private void removeCard() {
+        view.displayRemoveCardBanner();
+        int id = view.getCardIdChoice();
+        Card card = dao.removeCard(id);
+        view.removeCard(card);
     }
 }

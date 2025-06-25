@@ -21,9 +21,12 @@ public class IFlashCardDaoFile implements FlashCardDao {
     }
 
     @Override
-    public Card removeCard(int id) {
-        throw new UnsupportedOperationException("Not yet supported");
+    public Card viewCard(int cardId) {
+        return cards.get(cardId);
     }
 
-
+    @Override
+    public Card removeCard(int id) {
+        return cards.remove(id);
+    }
 }

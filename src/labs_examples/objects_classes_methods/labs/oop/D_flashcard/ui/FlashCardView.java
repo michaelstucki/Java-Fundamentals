@@ -11,10 +11,26 @@ public class FlashCardView {
         io.print("Main Menu");
         io.print("1. List Cards");
         io.print("2. Add New Card");
-        io.print("3. Remove Card");
-        io.print("4. Exit");
+        io.print("3. View Card");
+        io.print("4. Remove Card");
+        io.print("5. Exit");
 
-        return io.readInt("Please enter a selection", 1, 4);
+        return io.readInt("Please enter a selection", 1, 5);
+    }
+
+    public void displayAllCardsBanner() {
+        io.print("=== Display All Cards ===");
+    }
+
+    public void displayAllCards(List<Card> cards) {
+        for (Card card : cards) {
+            String cardInfo = String.format("#%d Q: %s A: %s",
+                    card.getId(),
+                    card.getFront(),
+                    card.getBack());
+            io.print(cardInfo);
+        }
+        io.print("Please hit enter to continue");
     }
 
     public Card getNewCard() {
@@ -32,18 +48,34 @@ public class FlashCardView {
         io.readString("Card successfully created. Please hit enter to continue");
     }
 
-    public void displayCards(List<Card> cards) {
-        for (Card card : cards) {
-            String cardInfo = String.format("#%d Q: %s A: %s",
-                    card.getId(),
-                    card.getFront(),
-                    card.getBack());
-            io.print(cardInfo);
+    public int getCardIdChoice() {
+        return io.readInt("Please enter the Card ID");
+    }
+
+    public void displayCard(Card card) {
+        if (card != null) {
+            io.print(card.toString());
+            io.print("");
+        } else {
+            io.print("No such card!");
         }
         io.print("Please hit enter to continue");
     }
 
-    public void displayAllCardsBanner() {
-        io.print("=== Display All Cards ===");
+    public void displayViewCardBanner() {
+        io.print("=== Display Card ===");
     }
- }
+
+    public void removeCard(Card card) {
+        if (card != null) {
+            io.print("Card successfully removed");
+        } else {
+            io.print("No such card!");
+        }
+        io.print("Please hit enter to continue");
+    }
+
+    public void displayRemoveCardBanner() {
+        io.print("=== Remove Card");
+    }
+}

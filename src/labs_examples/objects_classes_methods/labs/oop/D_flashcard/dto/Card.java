@@ -2,7 +2,7 @@ package labs_examples.objects_classes_methods.labs.oop.D_flashcard.dto;
 
 public class Card {
     private static int nextCardId = 1;
-    private int cardId = nextCardId++;
+    private final int cardId = nextCardId++;
     private String front;
     private String back;
 
@@ -26,6 +26,6 @@ public class Card {
 
     @Override
     public String toString() {
-        return front + " : " + back;
+        return Integer.toString(cardId) + " : " + front + " : " + back;
     }
 }
