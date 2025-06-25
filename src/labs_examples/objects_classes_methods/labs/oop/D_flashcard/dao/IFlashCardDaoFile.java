@@ -1,6 +1,8 @@
 package labs_examples.objects_classes_methods.labs.oop.D_flashcard.dao;
 
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dto.Card;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +12,7 @@ public class IFlashCardDaoFile implements FlashCardDao {
 
     @Override
     public List<Card> getAllCards() {
-        throw new UnsupportedOperationException("Not yet supported");
+        return new ArrayList<Card>(cards.values());
     }
 
     @Override
@@ -22,4 +24,6 @@ public class IFlashCardDaoFile implements FlashCardDao {
     public Card removeCard(int id) {
         throw new UnsupportedOperationException("Not yet supported");
     }
+
+
 }

@@ -7,6 +7,8 @@ import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.FlashCardVi
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.IUserIOConsole;
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.UserIO;
 
+import java.util.List;
+
 public class FlashCardController {
     private FlashCardView view = new FlashCardView();
     private FlashCardDao dao = new IFlashCardDaoFile();
@@ -20,7 +22,7 @@ public class FlashCardController {
 
             switch (menuSelection) {
                 case 1:
-                    io.print("LIST CARDS");
+                    listCards();
                     break;
                 case 2:
                     addCard();
@@ -47,6 +49,12 @@ public class FlashCardController {
         view.displayAddCardBanner();
         Card card = view.getNewCard();
         dao.addCard(card.getId(), card);
-        view.displayAddSuccessBanner();
+        view.displayAddCardSuccessBanner();
+    }
+
+    private void listCards() {
+        view.displayAllCardsBanner();
+        List<Card> cards = dao.getAllCards();
+        view.displayCards(cards);
     }
 }

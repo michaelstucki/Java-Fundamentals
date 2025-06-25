@@ -1,6 +1,7 @@
 package labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui;
 
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dto.Card;
+import java.util.List;
 
 public class FlashCardView {
 
@@ -27,7 +28,22 @@ public class FlashCardView {
         io.print("=== Add Card ===");
     }
 
-    public void displayAddSuccessBanner() {
+    public void displayAddCardSuccessBanner() {
         io.readString("Card successfully created. Please hit enter to continue");
+    }
+
+    public void displayCards(List<Card> cards) {
+        for (Card card : cards) {
+            String cardInfo = String.format("#%d Q: %s A: %s",
+                    card.getId(),
+                    card.getFront(),
+                    card.getBack());
+            io.print(cardInfo);
+        }
+        io.print("Please hit enter to continue");
+    }
+
+    public void displayAllCardsBanner() {
+        io.print("=== Display All Cards ===");
     }
  }
