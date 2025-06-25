@@ -1,11 +1,15 @@
 package labs_examples.objects_classes_methods.labs.oop.D_flashcard.controller;
 
+import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dao.FlashCardDao;
+import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dao.IFlashCardDaoFile;
+import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dto.Card;
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.FlashCardView;
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.IUserIOConsole;
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.UserIO;
 
 public class FlashCardController {
     private FlashCardView view = new FlashCardView();
+    private FlashCardDao dao = new IFlashCardDaoFile();
     private UserIO io = new IUserIOConsole();
 
     public void run() {
@@ -19,7 +23,7 @@ public class FlashCardController {
                     io.print("LIST CARDS");
                     break;
                 case 2:
-                    io.print("ADD NEW CARD");
+                    addCard();
                     break;
                 case 3:
                     io.print("REMOVE CARD");
@@ -37,5 +41,12 @@ public class FlashCardController {
 
     private int getMenuSelection() {
         return view.printMenuAndGetSelection();
+    }
+
+    private void addCard() {
+        view.displayAddCardBanner();
+        Card card = view.getNewCard();
+        dao.addCard(card.getId(), card);
+        view.displayAddSuccessBanner();
     }
 }
