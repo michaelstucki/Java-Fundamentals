@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface FlashCardDao {
     List<Card> getAllCards();
-    Card addCard(String front, String back);
+    Card addCard(int cardId, Card card);
     Card removeCard(int id);
 }
