@@ -4,7 +4,7 @@ User can:
 2. Add a new card
 3. View a card
 4. Delete a card
-5. Quit:W
+5. Quit
 
 It is designed as an Model-View-Controller (MVC).
 It codes to interfaces to provide loose coupling between each layer.
