@@ -10,10 +10,10 @@ import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.UserIO;
 public class FlashCardApp {
 
     public static void main(String[] args) {
-        UserIO io = new IUserIOConsole();               // console implementation of the UserIO interface
-        FlashCardView view = new FlashCardView(io);     // dependency inject io into viewer
-        FlashCardDao dao = new IFlashCardDaoFile();
-        FlashCardController controller = new FlashCardController(view, dao);
-        controller.run();
+        UserIO io = new IUserIOConsole();                                       // console implementation of the UserIO interface
+    FlashCardView view = new FlashCardView(io);                                 // dependency inject io into viewer
+        FlashCardDao dao = new IFlashCardDaoFile();                             // file implementation of the DAO
+        FlashCardController controller = new FlashCardController(view, dao);    // dependency inject view, dao into controller
+        controller.run();                                                       // kickoff app
     }
 }
