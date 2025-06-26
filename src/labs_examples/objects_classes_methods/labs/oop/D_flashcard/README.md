@@ -13,4 +13,7 @@ The Model layer interacts with the data (cards).
 The Controller orchestrates the actions of the View and Model layers.
 
 TODO:
-Add persistency so that the cards editted during runtime are retained after running the app.
+1. Add persistence so that the cards edited during runtime are retained after running the app.
+2. Add flashcard drills that keeps track of cards missed and re-drills them until all cards are correct.
+3. Add ability to create and delete different card decks each persisted in a distinct file.
+4. Add spaced repetition.

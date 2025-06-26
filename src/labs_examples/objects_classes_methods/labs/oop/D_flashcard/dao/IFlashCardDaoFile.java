@@ -1,7 +1,6 @@
 package labs_examples.objects_classes_methods.labs.oop.D_flashcard.dao;
 
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dto.Card;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
