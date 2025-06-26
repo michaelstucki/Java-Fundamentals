@@ -1,14 +1,18 @@
 package labs_examples.objects_classes_methods.labs.oop.D_flashcard.controller;
 
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dao.FlashCardDao;
-import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dao.IFlashCardDaoFile;
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dto.Card;
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.FlashCardView;
 import java.util.List;
 
 public class FlashCardController {
-    private FlashCardView view = new FlashCardView();
-    private FlashCardDao dao = new IFlashCardDaoFile();
+    private FlashCardView view;
+    private FlashCardDao dao;
+
+    public FlashCardController(FlashCardView view, FlashCardDao dao) {
+        this.view = view;
+        this.dao = dao;
+    }
 
     public void run() {
         boolean keepGoing = true;

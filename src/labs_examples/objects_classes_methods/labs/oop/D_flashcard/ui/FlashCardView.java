@@ -5,7 +5,11 @@ import java.util.List;
 
 public class FlashCardView {
 
-    private final UserIO io = new IUserIOConsole();
+    private final UserIO io;
+
+    public FlashCardView(UserIO io) {
+        this.io = io;
+    }
 
     public int printMenuAndGetSelection() {
         io.print("Main Menu");
