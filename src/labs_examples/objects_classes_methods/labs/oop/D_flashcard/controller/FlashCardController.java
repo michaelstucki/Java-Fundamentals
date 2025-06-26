@@ -4,14 +4,11 @@ import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dao.FlashCardD
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dao.IFlashCardDaoFile;
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.dto.Card;
 import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.FlashCardView;
-import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.IUserIOConsole;
-import labs_examples.objects_classes_methods.labs.oop.D_flashcard.ui.UserIO;
 import java.util.List;
 
 public class FlashCardController {
     private FlashCardView view = new FlashCardView();
     private FlashCardDao dao = new IFlashCardDaoFile();
-    private UserIO io = new IUserIOConsole();
 
     public void run() {
         boolean keepGoing = true;
@@ -36,11 +33,11 @@ public class FlashCardController {
                     keepGoing = false;
                     break;
                 default:
-                    io.print("UNKNOWN SELECTION!");
+                    view.displayUnknownSelection();
             }
         }
-        io.print("GOOD BYE!");
-        io.close();
+        view.displayExitBanner();
+        view.close();
     }
 
     private int getMenuSelection() {

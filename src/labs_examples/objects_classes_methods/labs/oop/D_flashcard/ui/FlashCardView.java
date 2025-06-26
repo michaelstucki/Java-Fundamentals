@@ -78,4 +78,16 @@ public class FlashCardView {
     public void displayRemoveCardBanner() {
         io.print("=== Remove Card");
     }
+
+    public void displayUnknownSelection() {
+        io.print("Invalid Selection!");
+    }
+
+    public void displayExitBanner() {
+        io.print("Good Bye!");
+    }
+
+    public void close() {
+        io.close();
+    }
 }
