@@ -4,6 +4,7 @@ public class Player {
     private String name;
     private Hand hand;
     private int potValue; // the amount of money they have
+    private int gamesWon =  0;
 
     public Player(String name, int potValue) {
         this.name = name;
@@ -29,4 +30,10 @@ public class Player {
     public boolean computerAI() {
         return hand.getHandValue() < 16;
     }
+
+    public void incrementGamesWon() {
+        gamesWon++;
+    }
+
+    public int getGamesWon() { return gamesWon; }
 }

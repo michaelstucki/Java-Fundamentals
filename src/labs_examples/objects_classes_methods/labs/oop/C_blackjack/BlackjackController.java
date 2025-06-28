@@ -15,6 +15,7 @@ public class BlackjackController {
         // Game loop
         System.out.println("------------ Welcome to Blackjack! ------------");
         boolean gameOver = false;
+        int gamesPlayed = 0;
         do {
             // Player pot amounts
             System.out.println("-------------- REMAINING POTS --------------");
@@ -98,9 +99,11 @@ public class BlackjackController {
             if (winner.equalsIgnoreCase(user.getName())) {
                 user.setPotValue(aiBet, '+');
                 ai.setPotValue(aiBet, '-');
+                user.incrementGamesWon();
             } else if (winner.equalsIgnoreCase(ai.getName())) {
                 user.setPotValue(userBet, '-');
                 ai.setPotValue(userBet, '+');
+                ai.incrementGamesWon();
             }
 
             if (user.getPotValue() <= 0) gameOver = true;
@@ -109,6 +112,8 @@ public class BlackjackController {
             // Collect cards from players
             user.getHand().clearHand();
             ai.getHand().clearHand();
+
+            gamesPlayed++;
         } while(!gameOver);
 
         System.out.println("-------------- GAME OVER! --------------");
@@ -119,5 +124,9 @@ public class BlackjackController {
         System.out.println(user.getName() + ": $" + user.getPotValue());
         System.out.println(ai.getName() + ": $" + ai.getPotValue());
         System.out.println();
+
+        System.out.println("Games Played: " + gamesPlayed);
+        System.out.println(user.getName() + " won " + user.getGamesWon());
+        System.out.println(ai.getName() + " won " + ai.getGamesWon());
     }
 }
