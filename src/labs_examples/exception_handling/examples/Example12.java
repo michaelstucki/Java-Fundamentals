@@ -27,6 +27,7 @@ class UseFinally {
         catch (ArrayIndexOutOfBoundsException exc) {
             // catch the exception
             System.out.println("No matching element found.");
+            return;
         }
         finally {
             System.out.println("Leaving try.");
