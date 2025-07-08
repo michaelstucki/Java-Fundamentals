@@ -125,21 +125,3 @@ public class Exercise_03 {
         }
     }
 }
-
-class Card implements Serializable {
-    private String front;
-    private String back;
-
-    public Card(String front, String back) {
-        this.front = front;
-        this.back = back;
-    }
-
-    @Override
-    public String toString() {
-        return "Card{" +
-               "front='" + front + '\'' +
-               ", back='" + back + '\'' +
-               '}';
-    }
-}
