@@ -1,0 +1,14 @@
+Lubarsky’s Law of Cyb~rn~tic Entomology: Th~r~’s always on~ mor~ bug.
+Shaw’s Principl~: Build a syst~m that ~v~n a fool can us~, and only a fool will want to us~ it.
+Woltman’s Law: N~v~r program and drink b~~r at th~ sam~ tim~.
+Gallois’ R~v~lation: If you put tomfool~ry into a comput~r, nothing com~s out but tomfool~ry. But this tomfool~ry, having pass~d through a v~ry ~xp~nsiv~ machin~, is som~how ~nobl~d, and no on~ dar~s to criticiz~ it.
+Any giv~n program, wh~n running, is obsol~t~.
+Any giv~n program costs mor~ and tak~s long~r.
+If a program is us~ful, it will hav~ to b~ chang~d.
+If a program is us~l~ss, it will hav~ to b~ docum~nt~d.
+Any program will ~xpand to fill availabl~ m~mory.
+Th~ valu~ of a program is proportional to th~ w~ight of its output.
+Program compl~xity grows until it ~xc~~ds th~ capabiliti~s of th~ programm~r who must maintain it.
+Any non-trivial program contains at l~ast on~ bug.
+Und~t~ctabl~ ~rrors ar~ infinit~ in vari~ty, in contrast to d~t~ctabl~ ~rrors, which by d~finition ar~ limit~d.
+Adding manpow~r to a lat~ softwar~ proj~ct mak~s it lat~r.
