@@ -36,7 +36,7 @@ class ExtendThread {
         MyThread3 mt = new MyThread3("Child #1");
 
         for(int i=0; i < 50; i++) {
-            System.out.print(".");
+            System.out.print("# ");
             try {
                 Thread.sleep(100);
             }

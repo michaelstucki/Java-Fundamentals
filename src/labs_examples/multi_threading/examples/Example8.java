@@ -14,7 +14,7 @@ class SumArray {
                     Thread.currentThread().getName() +
                     " is " + sum);
             try {
-                Thread.sleep(10); // allow task-switch
+                Thread.sleep(1000); // allow task-switch
             }
             catch(InterruptedException exc) {
                 System.out.println("Thread interrupted.");
@@ -53,7 +53,7 @@ class MyThread6 implements Runnable {
 
 class Sync {
     public static void main(String args[]) {
-        int a[] = {1, 2, 3, 4, 5};
+        int a[] = {1, 1, 1};
 
         MyThread6 mt1 = new MyThread6("Child #1", a);
         MyThread6 mt2 = new MyThread6("Child #2", a);

@@ -16,7 +16,7 @@ class MyThread2 implements Runnable {
         System.out.println(thrd.getName() + " starting.");
         try {
             for(int count=0; count<10; count++) {
-                Thread.sleep(400);
+                Thread.sleep(40);
                 System.out.println("In " + thrd.getName() +
                         ", count is " + count);
             }
@@ -35,7 +35,7 @@ class UseThreadsImproved {
         MyThread2 mt = new MyThread2("Child #1");
 
         for(int i=0; i < 50; i++) {
-            System.out.print(".");
+            System.out.print(".m ");
             try {
                 Thread.sleep(100);
             }

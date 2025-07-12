@@ -45,7 +45,7 @@ class PriorityDemo {
         Priority mt2 = new Priority("Low Priority");
 
         // set the priorities
-        mt1.thrd.setPriority(Thread.NORM_PRIORITY+2);
+        mt1.thrd.setPriority(Thread.NORM_PRIORITY+5);
         mt2.thrd.setPriority(Thread.NORM_PRIORITY-2);
 
         // start the threads
@@ -54,6 +54,7 @@ class PriorityDemo {
 
         try {
             mt1.thrd.join();
+            System.out.println("mt1 joined");
             mt2.thrd.join();
         }
         catch(InterruptedException exc) {

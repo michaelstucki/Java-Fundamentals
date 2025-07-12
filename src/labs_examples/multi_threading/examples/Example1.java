@@ -40,9 +40,9 @@ class UseThreads {
         newThrd.start();
 
         for(int i=0; i<50; i++) {
-            System.out.print(".");
+            System.out.print("m.\n");
             try {
-                Thread.sleep(100);
+                Thread.sleep(1000);
             }
             catch(InterruptedException exc) {
                 System.out.println("Main thread interrupted.");

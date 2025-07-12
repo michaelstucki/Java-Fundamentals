@@ -16,7 +16,7 @@ class MyThread5 implements Runnable {
         System.out.println(thrd.getName() + " starting.");
         try {
             for(int count=0; count < 10; count++) {
-                Thread.sleep(400);
+                Thread.sleep(4000);
                 System.out.println("In " + thrd.getName() +
                         ", count is " + count);
             }

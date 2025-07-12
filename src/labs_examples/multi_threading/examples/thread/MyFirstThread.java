@@ -29,7 +29,7 @@ class MyFirstThread extends Thread {
         System.out.println(getName() + " starting.");
         try {
             for(int count=0; count < 5; count++) {
-                Thread.sleep(400);
+                Thread.sleep(4000);
                 System.out.println("In " + getName() +
                         ", count is " + count);
             }

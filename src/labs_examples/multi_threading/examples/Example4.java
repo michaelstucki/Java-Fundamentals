@@ -38,7 +38,7 @@ class MoreThreads {
         MyThread4 mt3 = new MyThread4("Child #3");
 
         for(int i=0; i < 50; i++) {
-            System.out.print(".");
+            System.out.print("# ");
             try {
                 Thread.sleep(100);
             }

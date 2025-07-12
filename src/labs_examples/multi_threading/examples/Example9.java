@@ -56,7 +56,7 @@ class MyThread7 implements Runnable {
 // may have to rename to "Sync"
 class Sync2 {
     public static void main(String args[]) {
-        int a[] = {1, 2, 3, 4, 5};
+        int a[] = {1, 1, 1};
 
         MyThread7 mt1 = new MyThread7("Child #1", a);
         MyThread7 mt2 = new MyThread7("Child #2", a);
