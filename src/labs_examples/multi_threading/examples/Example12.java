@@ -7,7 +7,7 @@ class MyThread9 implements Runnable {
     boolean suspended;
     boolean stopped;
 
-    MyThread9(String name) {
+    MyThread9 (String name) {
         thrd = new Thread(this, name);
         suspended = false;
         stopped = false;
@@ -18,7 +18,7 @@ class MyThread9 implements Runnable {
     public void run() {
         System.out.println(thrd.getName() + " starting.");
         try {
-            for(int i = 1; i < 1000; i++) {
+            for (int i = 1; i < 1000; i++) {
                 System.out.print(i + " ");
                 if((i%10)==0) {
                     System.out.println();
@@ -26,11 +26,11 @@ class MyThread9 implements Runnable {
                 }
 
                 // Use synchronized block to check suspended and stopped.
-                synchronized(this) {
-                    while(suspended) {
+                synchronized (this) {
+                    while (suspended) {
                         wait();
                     }
-                    if(stopped) break;
+                    if (stopped) break;
                 }
             }
         } catch (InterruptedException exc) {
@@ -74,7 +74,6 @@ class Suspend {
             ob1.myresume();
             System.out.println("Resuming thread.");
             Thread.sleep(1000);
-
 
             ob1.mysuspend();
             System.out.println("Suspending thread.");

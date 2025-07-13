@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class LiveLock {
     // Create two Locks
-    // Lock functionality is a similar to synchronized block,
+    // Lock functionality is similar to synchronized block,
     // but it provides explicit lock/unlock methods
     private static Lock lock1 = new ReentrantLock(true);
     private static Lock lock2 = new ReentrantLock(true);

@@ -19,7 +19,7 @@ class TickTock {
 
         notify(); // let tock() run
         try {
-            while(!state.equals("tocked"))
+            while(state.equals("ticked"))
                 wait(); // wait for tock() to complete
         }
         catch(InterruptedException exc) {
@@ -40,7 +40,7 @@ class TickTock {
 
         notify(); // let tick() run
         try {
-            while(!state.equals("ticked"))
+            while(state.equals("tocked"))
                 wait(); // wait for tick to complete
         }
         catch(InterruptedException exc) {
@@ -63,7 +63,7 @@ class MyThread8 implements Runnable {
     // Begin execution of new thread.
     public void run() {
 
-        if(thrd.getName().compareTo("Tick") == 0) {
+        if (thrd.getName().equals("Tick")) {
             for(int i=0; i<5; i++)
                 ttOb.tick(true);
             ttOb.tick(false);

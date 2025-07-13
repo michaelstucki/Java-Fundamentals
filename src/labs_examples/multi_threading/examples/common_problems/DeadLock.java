@@ -10,7 +10,7 @@ public class DeadLock {
         Integer resourceB = 1;
 
         // Create two threads that will perform deadlock
-        // Study the implementation bellow
+        // Study the implementation below
         // Although they are similar pay attention to the order of the resources they synchronize on
 
         System.out.println("You are about to experience deadlock. To exit press 'Control+C'");

@@ -12,12 +12,12 @@ public class RaceCondition {
         Incrementer incrementer = new Incrementer(counter);
 
         // # of Parallel thread that will update the counter
-        int parallelThreads = 10;
+        int parallelThreads = 3;
 
         // An array to keep all the threads
         Thread[] threads = new Thread[parallelThreads];
 
-        // Create all thread
+        // Create all threads
         for (int i = 0; i < parallelThreads; i++) {
             threads[i] = new Thread(incrementer);
         }
