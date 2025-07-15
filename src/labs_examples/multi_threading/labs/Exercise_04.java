@@ -7,35 +7,33 @@ package labs_examples.multi_threading.labs;
  *      working as expected
  */
 public class Exercise_04 implements Runnable {
-    private static int count = 0;
-    public synchronized static void increment() {
-        count++;
-        System.out.print(count + " ");
+    private static int low = 0;
+    private static char high = 'z' + 1;
+
+    // synchronized method
+    private synchronized void increment() {
+        low++;
+        System.out.print(low + " ");
     }
 
-    public void run() {
-        A a = new A();
-        for (int i = 0; i < 20; i++) increment();
-        for (int i = 0; i < 20; i++) {
-            synchronized (a) {
-                a.increment();
-            }
+    // synchronized block
+    private void decrement() {
+        synchronized (this) {
+            high--;
+            System.out.print(high + " ");
         }
     }
 
+    public void run() {
+        for (int i = 0; i < 3; i++) increment();
+        for (int i = 0; i < 3; i++) decrement();
+    }
+
     public static void main(String[] args) {
-        Exercise_04 a = new Exercise_04();
-        Thread t1 = new Thread(a);
-        Thread t2 = new Thread(a);
+        Exercise_04 r = new Exercise_04();
+        Thread t1 = new Thread(r);
+        Thread t2 = new Thread(r);
         t1.start();
         t2.start();
-    }
-}
-
-class A {
-    private int count = 1000;
-    public void increment() {
-        count++;
-        System.out.print(count + " ");
     }
 }
