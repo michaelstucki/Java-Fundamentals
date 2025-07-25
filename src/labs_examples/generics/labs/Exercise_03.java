@@ -44,6 +44,10 @@ public class Exercise_03 {
         d.exchangePosition(items2, 0, 3);
         for (String item : items2) System.out.print(item + " ");
         System.out.println();
+
+        ArrayList<Integer> items3 = new ArrayList<>();
+        items3.add(1); items3.add(2); items3.add(0); items3.add(4);
+        System.out.println(d.getLargest(items3, 1, 3));
     }
 }
 
@@ -73,4 +77,14 @@ class Demo1 {
         arr[i] = arr[j];
         arr[j] = tmp;
     }
+
+    public <T extends Number> double getLargest(ArrayList<T> list, int begin, int end) {
+        Double max = list.get(begin).doubleValue();
+        for (int i = begin; i <= end; i++) {
+            Double tmp = list.get(i).doubleValue();
+            if (tmp.compareTo(max) > 0) max = tmp;
+        }
+        return max;
+    }
 }
+
