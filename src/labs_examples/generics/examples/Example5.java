@@ -23,10 +23,7 @@ class NumericFns3<T extends Number> {
     // Determine if the absolute values of two
     // objects are the same.
     boolean absEqual(NumericFns3<?> ob) {
-        if(Math.abs(num.doubleValue()) ==
-                Math.abs(ob.num.doubleValue())) return true;
-
-        return false;
+        return (Math.abs(num.doubleValue()) == Math.abs(ob.num.doubleValue()));
     }
 
     // ...

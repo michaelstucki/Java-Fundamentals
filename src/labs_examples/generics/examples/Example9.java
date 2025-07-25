@@ -4,7 +4,9 @@ package labs_examples.generics.examples;
 class GenericMethodDemo {
 
     // Determine if the contents of two labs_examples.arrays are same.
-    static <T extends Comparable<T>, V extends T> boolean arraysEqual(T[] x, V[] y) {
+    // this extra stuff is not needed
+//    static <T extends Comparable<T>, V extends T> boolean arraysEqual(T[] x, V[] y) {
+    static <T, V> boolean arraysEqual(T[] x, V[] y) {
         // If array lengths differ, then the labs_examples.arrays differ.
         if(x.length != y.length) return false;
 

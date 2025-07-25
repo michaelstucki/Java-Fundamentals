@@ -26,9 +26,9 @@ class RawDemo {
         // Create a Gen object for Strings.
         Gen3<String> strOb = new Gen3<String>("Generics Test");
 
-        // Create a raw-type Gen object and give it
-        // a Double value.
-        Gen3 raw = new Gen3(new Double(98.6));
+        // Create a raw-type Gen object and give it a Double value.
+        Gen3 raw = new Gen3(Double.valueOf(98.6));
+//        Gen3 raw = new Gen3(new Double(98.6));
 
         // Cast here is necessary because type is unknown.
         double d = (Double) raw.getob();

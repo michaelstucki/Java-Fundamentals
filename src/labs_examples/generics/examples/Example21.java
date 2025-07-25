@@ -4,7 +4,7 @@ package labs_examples.generics.examples;
 class Gen5<T extends Number> {
     T ob;
 
-    T vals[]; // OK
+    T[] vals; // OK
 
     Gen5(T o, T[] nums) {
         ob = o;
@@ -19,14 +19,13 @@ class Gen5<T extends Number> {
 
 class GenArrays {
     public static void main(String args[]) {
-        Integer n[] = { 1, 2, 3, 4, 5 };
-
+        Integer[] n = { 1, 2, 3, 4, 5 };
         Gen5<Integer> iOb = new Gen5<Integer>(50, n);
 
         // Can't create an array of type-specific generic references.
-        // Gen<Integer> gens[] = new Gen<Integer>[10]; // Wrong!
+//         Gen5<Integer>[] gens = new Gen5<Integer>[10]; // Wrong!
 
         // This is OK.
-        Gen5<?> gens[] = new Gen5<?>[10]; // OK
+        Gen5<?>[] gens = new Gen5<?>[10]; // OK
     }
 }

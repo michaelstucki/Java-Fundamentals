@@ -7,7 +7,7 @@ class TwoGen<T, V> {
     V ob2;
 
     // Pass the constructor a reference to
-    // an object of type T.
+    // an object of type T and of type V.
     TwoGen(T o1, V o2) {
         ob1 = o1;
         ob2 = o2;
