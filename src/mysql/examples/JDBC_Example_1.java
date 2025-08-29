@@ -7,7 +7,6 @@ import java.sql.*;
 
 public class JDBC_Example_1 {
 
-
     public static void main(String[] args)  {
 
         Connection connection = null;
@@ -19,18 +18,16 @@ public class JDBC_Example_1 {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             String connectionString = "jdbc:mysql://localhost/college?"
-                    + "user=<YOUR_MYSQL_USERNAME>&password=<YOUR_MYSQL_PASSWORD>"
+                    + "user=<?>&password=<?>>"
                     + "&useSSL=false&allowPublicKeyRetrieval=true";
 
             // Setup the connection with the DB
-            connection = DriverManager
-                    .getConnection(connectionString);
+            connection = DriverManager.getConnection(connectionString);
 
             // Statements allow to issue SQL queries to the database
             statement = connection.createStatement();
             // Result set get the result of the SQL query
-            resultSet = statement
-                    .executeQuery("select * from college.courses");
+            resultSet = statement.executeQuery("select * from college.courses");
 
             // loop through the result set while there are more records
             while (resultSet.next()) {
@@ -41,14 +38,14 @@ public class JDBC_Example_1 {
                 int units = resultSet.getInt("units");
 
                 // print out the result
-                System.out.println("Course ID: " + id + " is " + name + " and has " + units + units);
+                System.out.println("course id: " + id + ", name: " + name + ", units: " + units);
             }
 
         } catch (SQLException exc) {
             System.out.println("Exception occurred");
             exc.printStackTrace();
         } catch (ClassNotFoundException e) {
-            System.out.println("Exception occured - driver not found on classpath");
+            System.out.println("Exception occurred - driver not found on classpath");
             e.printStackTrace();
         } finally {
             try {
