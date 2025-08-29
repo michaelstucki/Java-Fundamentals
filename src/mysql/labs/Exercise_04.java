@@ -1,6 +1,5 @@
 package mysql.labs;
 
-
 /*
 *  MySQL Exercise 4:
 *
@@ -14,19 +13,18 @@ package mysql.labs;
 *       2.) CRUD new passengers
 *       3.) Bonus: flex those JDBC muscles! How nice, clean, useful can you make this? Show us what you've got!
 *
-*
 *   Caution: Before you push this code to GitHub, be sure to REMOVE or REPLACE your DATABASE PASSWORD. You do not 
 *   want to push your database password to GitHub. If you do push your password to GitHub you'll need to delete
 *   the commit from your Git history. See, for instance: https://medium.com/multinetinventiv/removing-commits-from-git-history-4e2340288484 
 *
- */
+*/
 
 public class Exercise_04 {
 
     public static void main(String[] args) {
         /*
-        Just as a casual example - each of these operations should be in it's own method. Feel free to
-        create all required classes/methods to accomplish this.
+        Just as a casual example - each of these operations should be in its own method.
+        Feel free to create all required classes/methods to accomplish this.
 
         createFlight(...);
         queryFlight(...);
@@ -40,8 +38,6 @@ public class Exercise_04 {
 
         ...
 
-
          */
     }
-
 }
