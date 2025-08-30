@@ -67,7 +67,7 @@ class MySQL {
             Class.forName(driver);
             String url = "jdbc:mysql://localhost/airtravel";
             String user = "root";
-            String password = "OraProNobis7!";
+            String password = "";
             connection = DriverManager.getConnection(url, user, password);
             statement = connection.createStatement();
         } catch (SQLException | ClassNotFoundException e) {
