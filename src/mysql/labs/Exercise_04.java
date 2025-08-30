@@ -19,25 +19,122 @@ package mysql.labs;
 *
 */
 
+import java.sql.*;
+
 public class Exercise_04 {
-
     public static void main(String[] args) {
-        /*
-        Just as a casual example - each of these operations should be in its own method.
-        Feel free to create all required classes/methods to accomplish this.
+        MySQL mysql = new MySQL();
+        String query;
 
-        createFlight(...);
-        queryFlight(...);
-        updateFlight(...);
-        deleteFlight(...);
+        // Flight queries
+        query = "SELECT * FROM Flight;";
+        mysql.query(query);
 
-        createPassenger(...);
-        queryPassenger(...);
-        updatePassenger(...);
-        deletePassenger(...);
+        query = "INSERT INTO Flight ";
+        query += "(airlineID, airplaneID, departureID, arrivalID, departureDate, departureTime, arrivalDate, arrivalTime) ";
+        query += "VALUES (1, 2, 3, 2, '2026-01-02', '01:00:00', '2026-01-03', '06:00:15');";
+        mysql.add(query);
 
-        ...
+        query = "UPDATE Flight SET arrivalDate = '2026-01-04', arrivalTime = '07:14:00' WHERE id = 15;";
+        mysql.update(query);
 
-         */
+        query = "DELETE FROM Flight WHERE id = 16;";
+        mysql.delete(query);
+
+        // Passenger queries
+        query = "SELECT * FROM Passenger;";
+        mysql.query(query);
+
+        query = "INSERT INTO Passenger (firstName, lastName) VALUES ('Johnny', 'Cash');";
+        mysql.add(query);
+
+        query = "UPDATE Passenger SET firstName = 'John' WHERE firstName = 'Johnny' AND lastName = 'Cash'";
+        mysql.update(query);
+
+        query = "DELETE FROM Passenger WHERE firstName = 'Johnny' AND lastName = 'Cash'";
+        mysql.delete(query);
+    }
+}
+
+class MySQL {
+    private Connection connection = null;
+    private Statement statement = null;
+    private ResultSet resultSet = null;
+
+    private void initializeDB(String query) {
+        try {
+            String driver = "com.mysql.cj.jdbc.Driver";
+            Class.forName(driver);
+            String url = "jdbc:mysql://localhost/airtravel";
+            String user = "root";
+            String password = "OraProNobis7!";
+            connection = DriverManager.getConnection(url, user, password);
+            statement = connection.createStatement();
+        } catch (SQLException | ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void query(String query) {
+        initializeDB(query);
+        try {
+            resultSet = statement.executeQuery(query);
+            System.out.println("query completed: " + query);
+            if (resultSet == null) throw new SQLException();
+            while(resultSet.next()) {
+                int id = resultSet.getInt("id");
+                System.out.println("id:" + id);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            close();
+        }
+    }
+
+    public void add(String query) {
+        initializeDB(query);
+        try {
+            statement.executeUpdate(query);
+            System.out.println("query completed: " + query);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());;
+        } finally {
+            close();
+        }
+    }
+
+    public void update(String query) {
+        initializeDB(query);
+        try {
+            statement.executeUpdate(query);
+            System.out.println("query completed: " + query);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());;
+        } finally {
+            close();
+        }
+    }
+
+    public void delete(String query) {
+        initializeDB(query);
+        try {
+            statement.executeUpdate(query);
+            System.out.println("query completed: " + query);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());;
+        } finally {
+            close();
+        }
+    }
+
+    private void close() {
+        try {
+            if (resultSet != null) { resultSet.close(); }
+            if (statement != null) { statement.close(); }
+            if (connection != null) { connection.close(); }
+        } catch (Exception e) {
+            System.out.println("Could not close database resources");
+        }
     }
 }
