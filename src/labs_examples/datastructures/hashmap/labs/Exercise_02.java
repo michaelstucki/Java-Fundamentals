@@ -125,6 +125,7 @@ class MyHashMap<K, V> {
             while (cursor != null) {
                 if (cursor.key == key) {
                     node = cursor;
+                    numNodes--;
                     // a single node in list
                     if (node.prev == null && node.next == null) {
                         data[position] = null;
@@ -162,8 +163,11 @@ class MyHashMap<K, V> {
         int position = node.key.hashCode() % tmp.length;
         if (tmp[position] != null) {
             Node<K, V> cursor = tmp[position];
+            // change value for existing key
             if (cursor.key == node.key) {
                 cursor.value = node.value;
+                // decrement counter
+                numNodes--;
                 return;
             }
             node.next = cursor;
